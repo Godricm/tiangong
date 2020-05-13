@@ -16,7 +16,7 @@ import java.io.Serializable;
  * @version: 1.0.0
  * @modified: miaochen
  **/
-@JsonIgnoreProperties(value={"ct","ut","isDel","version"})
+@JsonIgnoreProperties(value={"create_time","update_time","is_del","version"})
 public abstract class BaseModel<T extends BaseModel> extends Model<T> {
     @Override
     public String toString() {
