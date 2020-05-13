@@ -1,4 +1,4 @@
-package com.kaizhuo.common.core.config;
+package com.kaizhuo.common.core.config.db;
 
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;

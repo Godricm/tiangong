@@ -17,4 +17,6 @@ public class Constants {
 
     public static final String HEADER_USER_ID = "X-USER-ID";
     public static final String HEADER_SOURCE = "X-SOURCE";
+
+    public static final String AUTHORIZATION="Authorization";
 }
