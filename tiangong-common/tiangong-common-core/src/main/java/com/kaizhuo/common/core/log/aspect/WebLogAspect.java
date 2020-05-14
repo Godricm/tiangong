@@ -1,4 +1,4 @@
-package com.kaizhuo.common.core.aspect;
+package com.kaizhuo.common.core.log.aspect;
 
 import com.alibaba.fastjson.JSON;
 import com.kaizhuo.common.core.util.NetworkUtils;
@@ -18,7 +18,7 @@ import java.util.Enumeration;
 
 /**
  * @program: tiangong
- * @package: com.kaizhuo.common.core.aspect
+ * @package: com.kaizhuo.common.core.log.aspect
  * @description: 自定义日志输出。仅输出controller包下相关controller的请求和返回内容日志，方便调试。
  * @author: miaochen
  * @create: 2020-05-13 23:09

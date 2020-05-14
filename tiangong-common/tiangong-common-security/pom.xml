@@ -21,6 +21,12 @@
             <groupId>com.kaizhuo</groupId>
             <artifactId>tiangong-common-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.kaizhuo</groupId>
+            <artifactId>tiangong-common-core</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 

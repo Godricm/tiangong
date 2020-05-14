@@ -27,10 +27,12 @@
         <mybatisplus.spring.boot.starter.version>3.0.6</mybatisplus.spring.boot.starter.version>
 
         <hutool.version>4.4.5</hutool.version>
+        <jackson.version>2.11.0</jackson.version>
     </properties>
 
     <modules>
         <module>tiangong-common</module>
+        <module>tiangong-user</module>
     </modules>
 
     <dependencies>
@@ -58,6 +60,7 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+
 
     </dependencies>
 
