@@ -1,37 +1,26 @@
-package com.kaizhuo.tiangonguser.entity;
+package com.kaizhuo.tiangonguser.vo.response;
 
-import com.baomidou.mybatisplus.annotation.*;
-import com.kaizhuo.common.core.base.model.BaseModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
 /**
  * @program: tiangong
- * @package: com.kaizhuo.tiangonguser.entity
+ * @package: com.kaizhuo.tiangonguser.vo.response
  * @description: 部门信息
  * @author: miaochen
- * @create: 2020-05-14 22:47
+ * @create: 2020-05-15 21:41
  * @copyright: CopyRight (c) 2020
  * @version: 1.0.0
  * @modified: miaochen
  **/
-@TableName("sys_dept")
-@ApiModel(value="Dept对象", description="部门信息")
+@ApiModel(value = "部门信息")
 @Data
-public class Dept extends BaseModel<Dept> {
-
-    private static final long serialVersionUID = -5922109865264990306L;
+public class DeptVo {
     @ApiModelProperty(value = "部门id")
-    @TableId(value = "dept_id", type = IdType.AUTO)
     private Long deptId;
-
-    @TableField(strategy = FieldStrategy.IGNORED)
-    @ApiModelProperty(value = "父部门id")
-    private Long parentId;
 
     @ApiModelProperty(value = "部门名称")
     private String deptName;
@@ -51,9 +40,6 @@ public class Dept extends BaseModel<Dept> {
     @ApiModelProperty(value = "邮箱")
     private String email;
 
-    @Override
-    protected Serializable pkVal() {
-        return this.deptId;
-    }
-
+    @ApiModelProperty(value = "子级部门列表")
+    private List<DeptVo> childDepts;
 }

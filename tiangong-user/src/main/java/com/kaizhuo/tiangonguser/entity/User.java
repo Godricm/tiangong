@@ -22,7 +22,7 @@ import java.util.Date;
 @TableName("sys_user")
 @ApiModel(value="User对象", description="用户信息")
 @Data
-public class SysUser extends BaseModel<SysUser> {
+public class User extends BaseModel<User> {
 
     private static final long serialVersionUID = 5434055431241286933L;
 
@@ -50,43 +50,9 @@ public class SysUser extends BaseModel<SysUser> {
     @ApiModelProperty(value = "用户状态 'N' 正常 'L' 锁定")
     private String userStatus;
 
-    @ApiModelProperty(value = "创建时间", hidden = true)
-    @TableField(fill = FieldFill.INSERT,value = "create_time")
-    private Date createTime;
-
-    @ApiModelProperty(value = "更新时间", hidden = true)
-    @TableField(fill = FieldFill.INSERT_UPDATE,value = "update_time")
-    private Date updateTime;
-
-    @ApiModelProperty(value = "删除标识位 0 未删除  1 已删除", hidden = true)
-    @TableLogic
-    @TableField(value = "is_del")
-    private Integer isDel;
-
-    @ApiModelProperty(value = "乐观锁标识", hidden = true)
-    @Version
-    private Long version;
-
     @Override
     protected Serializable pkVal() {
         return this.userId;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName=" + userName +
-                ", password=" + password +
-                ", mobile=" + mobile +
-                ", email=" + email +
-                ", joinTime=" + joinTime +
-                ", lastLogin=" + lastLogin +
-                ", userStatus=" + userStatus +
-                ", ct=" + createTime +
-                ", ut=" + updateTime +
-                ", isDel=" + isDel +
-                ", version=" + version +
-                "}";
-    }
 }
