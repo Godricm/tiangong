@@ -25,7 +25,11 @@
         <java.version>1.8</java.version>
         <!--Mybatis-Plus相关版本-->
         <mybatisplus.spring.boot.starter.version>3.0.6</mybatisplus.spring.boot.starter.version>
-
+        <apache.commons.collections.version>3.2.2</apache.commons.collections.version>
+        <apache.commons.io.version>2.6</apache.commons.io.version>
+        <apache.commons.codec.version>1.11</apache.commons.codec.version>
+        <apache.commons.beanutils.version>1.9.3</apache.commons.beanutils.version>
+        <commons-lang.version>2.6</commons-lang.version>
         <hutool.version>4.4.5</hutool.version>
         <jackson.version>2.11.0</jackson.version>
     </properties>
