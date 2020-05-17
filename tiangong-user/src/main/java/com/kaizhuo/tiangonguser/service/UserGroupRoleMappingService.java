@@ -1,6 +1,7 @@
 package com.kaizhuo.tiangonguser.service;
 
 import com.kaizhuo.common.core.base.service.BaseService;
+import com.kaizhuo.tiangonguser.entity.UserGroupRoleMapping;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  * @version: 1.0.0
  * @modified: miaochen
  **/
-public interface UserGroupRoleMapping extends BaseService<UserGroupRoleMapping> {
+public interface UserGroupRoleMappingService extends BaseService<UserGroupRoleMapping> {
     void bindMapping(Long groupId, List<Long> roleIds);
 
     void removeByGroupId(Serializable groupId);
