@@ -11,6 +11,11 @@ package com.kaizhuo.common.core.constants;
  * @modified: miaochen
  **/
 public class Constants {
+    public static final String ADMIN_NAME = "admin";
+    public static final Long ADMIN_ROLE_ID = 1L;
+    public static final Long INDEX_ROOT_RESOURCE_ID = 1L;
+    public static final Long INDEX_RESOURCE_ID = 2L;
+    public static final Long DASHBOARD_RESOURCE_ID = 3L;
     // 默认分页配置
     public static final int DEFAULT_PAGE_SIZE = 20;
     public static final int DEFAULT_PAGE_NUM = 1;

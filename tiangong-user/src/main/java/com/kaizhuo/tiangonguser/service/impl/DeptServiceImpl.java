@@ -1,7 +1,10 @@
 package com.kaizhuo.tiangonguser.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.kaizhuo.common.core.base.service.BaseServiceImpl;
+import com.kaizhuo.tiangonguser.constants.UserErrorCode;
 import com.kaizhuo.tiangonguser.entity.Dept;
+import com.kaizhuo.tiangonguser.exception.UserException;
 import com.kaizhuo.tiangonguser.mapper.DeptMapper;
 import com.kaizhuo.tiangonguser.service.DeptService;
 import com.kaizhuo.tiangonguser.service.UserDeptMappingService;
@@ -40,17 +43,77 @@ public class DeptServiceImpl extends BaseServiceImpl<DeptMapper, Dept> implement
 
     @Override
     public List<Dept> getUserDepts(Long userId) {
-        return null;
+        List<Dept> depts=baseMapper.getUserDepts(userId);
+        return depts;
     }
 
     @Override
     public List<Long> getDeptIdsByParentId(Long parentId) {
-        return null;
+        List<Dept> depts=list(); 
+        return getChildTreeDeptIds(depts,parentId);
     }
 
     @Override
     public void bindUserDept(Long userId, List<Long> deptIds) {
+        userDeptMappingService.removeByUserId(userId);
+        userDeptMappingService.bindMapping(userId,deptIds);
 
+    }
+
+    @Override
+    public boolean updateById(Dept entity) {
+        //check验证
+        Long parentDeptId = entity.getParentId();
+        Long deptId = entity.getDeptId();
+        Dept dept = getById(deptId);
+
+        // 如果父类等级小于等于当前等级,则拒绝更新
+        if(parentDeptId != null){
+            // 父级分类不能为自己
+            if(deptId.equals(parentDeptId)){
+                throw new UserException(UserErrorCode.DEPT_CANNOT_SELF_ERROR.getCode());
+            }
+            Dept parentDept = getById(parentDeptId);
+            if(parentDept == null){
+                throw new UserException(UserErrorCode.DEPT_PARENT_NOT_EXIST_ERROR.getCode());
+            }
+
+            Integer parentDeptLevel = parentDept.getLevel();
+            if(parentDeptLevel != null){
+                if(dept.getLevel() == null || dept.getLevel() < parentDeptLevel){
+                    throw new UserException(UserErrorCode.DEPT_LEVEL_ERROR.getCode());
+                }
+                entity.setLevel(parentDeptLevel + 1);
+            }
+        } else {
+            entity.setLevel(0);
+        }
+
+        return super.updateById(entity);
+    }
+
+    @Override
+    public boolean save(Dept entity) {
+        // 添加前填充分类等级字段
+        Long parentId = entity.getParentId();
+        if(parentId != null){
+            Dept parentDept = getById(parentId);
+            if(parentDept == null){
+                throw new UserException(UserErrorCode.DEPT_PARENT_NOT_EXIST_ERROR.getCode());
+            }
+
+            Integer parentDeptLevel = parentDept.getLevel();
+            if(parentDeptLevel != null){
+                entity.setLevel(parentDeptLevel + 1);
+            }
+        }
+
+        return super.save(entity);
+    }
+
+    @Override
+    public List<Dept> list() {
+        return super.list(new QueryWrapper<Dept>().orderByDesc("order_num"));
     }
 
     private List<DeptVo> convertTreeDepts(List<Dept> depts){
