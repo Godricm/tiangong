@@ -3,6 +3,7 @@ package com.kaizhuo.tiangonguser.vo.request;
 import com.kaizhuo.common.core.vo.PageRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.util.Date;
 
@@ -17,6 +18,7 @@ import java.util.Date;
  * @modified: miaochen
  **/
 @ApiModel("定时任务日志过滤实体")
+@Data
 public class TaskLogFilterVo extends PageRequest {
     @ApiModelProperty("开始时间")
     private Date startTime;

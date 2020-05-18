@@ -45,6 +45,8 @@ public class DeptController extends BaseController<DeptService, Dept> {
         return new ResponseVo<>(userDepts);
     }
 
+    @PutMapping("/bind/{userId}")
+    @ApiOperation(value = "设置用户所属部门", notes = "设置用户所属部门")
     public ResponseVo userDeptBind(@PathVariable("userId") Long userId, @ApiParam(value = "所属的部门ID,多个以英文逗号分隔", required = true) @RequestParam(value = "deptIds") String deptIds){
         List<Long> deptIdList= ConvertUtil.splitStr2LongList(deptIds,",");
         bizService.bindUserDept(userId,deptIdList);

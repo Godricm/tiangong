@@ -2,6 +2,7 @@ package com.kaizhuo.tiangonguser.vo.request;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 
@@ -16,6 +17,7 @@ import javax.validation.constraints.NotNull;
  * @modified: miaochen
  **/
 @ApiModel("添加/修改资源信息")
+@Data
 public class UpdateResourceVo {
     @ApiModelProperty(value = "资源名称", required = true)
     @NotNull

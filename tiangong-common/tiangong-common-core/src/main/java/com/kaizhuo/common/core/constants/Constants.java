@@ -20,8 +20,16 @@ public class Constants {
     public static final int DEFAULT_PAGE_SIZE = 20;
     public static final int DEFAULT_PAGE_NUM = 1;
 
+
+    // 删除标识位
+    public static final Integer DELETE_CODE_NO = 0;
+    public static final Integer DELETE_CODE_YES = 1;
+
     public static final String HEADER_USER_ID = "X-USER-ID";
     public static final String HEADER_SOURCE = "X-SOURCE";
 
-    public static final String AUTHORIZATION="Authorization";
+    public static final String AUTHORIZATION = "Authorization";
+
+    public static final String FIELD_CREATE_TIME = "create_time";
+    public static final String FIELD_UPDATE_TIME = "update_time";
 }
