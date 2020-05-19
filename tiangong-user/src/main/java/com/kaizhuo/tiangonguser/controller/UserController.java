@@ -1,12 +1,24 @@
 package com.kaizhuo.tiangonguser.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.kaizhuo.common.core.enums.CoreErrorCode;
+import com.kaizhuo.common.core.vo.ResponseVo;
 import com.kaizhuo.tiangonguser.constants.Urls;
+import com.kaizhuo.tiangonguser.constants.UserErrorCode;
+import com.kaizhuo.tiangonguser.exception.UserException;
 import com.kaizhuo.tiangonguser.service.UserService;
+import com.kaizhuo.tiangonguser.vo.request.UserAccountVo;
+import com.kaizhuo.tiangonguser.vo.response.LoginResponseVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -26,7 +38,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = Urls.USER_LOGIN, method = RequestMethod.PUT)
+    @PutMapping("/login")
     @ApiOperation(value = "用户登录", notes = "用户登录")
     @SentinelResource(value = "login", blockHandler = "sentinelLogin")
     public ResponseVo<LoginResponseVo> login(@Valid UserAccountVo accountVo) {
@@ -46,9 +58,9 @@ public class UserController {
         return new ResponseVo<>(CoreErrorCode.SENTINEL_ERROR.getCode(), CoreErrorCode.SENTINEL_ERROR.getDesc());
     }
 
-    @RequestMapping(value = Urls.USER_LOGOUT, method = RequestMethod.PUT)
+    @PutMapping("logout")
     @ApiOperation(value = "用户注销", notes = "用户注销")
-    @OpLog(description = "用户注销", opType = OpType.OTHER)
+    @Web(description = "用户注销", opType = OpType.OTHER)
     public ResponseVo<LoginResponseVo> logout(@ApiParam(value = "用户ID", required = true) @PathVariable("userId") Long userId) {
         userService.logout(userId);
 
