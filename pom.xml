@@ -16,6 +16,7 @@
     <description>凯卓天工</description>
 
     <properties>
+        <!--数据库连接池-->
         <druid.starter.version>1.1.10</druid.starter.version>
         <fastjson.version>1.2.68</fastjson.version>
         <jwt.version>0.9.0</jwt.version>
@@ -32,6 +33,10 @@
         <commons-lang.version>2.6</commons-lang.version>
         <hutool.version>4.4.5</hutool.version>
         <jackson.version>2.11.0</jackson.version>
+        <shiro.version>1.4.0</shiro.version>
+        <aliyun.oss.version>2.8.3</aliyun.oss.version>
+
+        <filters.base.path>src/filters</filters.base.path>
     </properties>
 
     <modules>
@@ -71,12 +76,15 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+        <defaultGoal>package</defaultGoal>
+        <resources>
 
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+    </build>
 </project>
