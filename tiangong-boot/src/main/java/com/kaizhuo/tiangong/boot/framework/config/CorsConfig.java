@@ -1,21 +1,17 @@
 package com.kaizhuo.tiangong.boot.framework.config;
 
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-/**
- * @Author: Ht
- * @Date: 2018/6/8 17:06
- * @Description:
- */
 @Configuration
 public class CorsConfig {
 
     @Bean
-    public CorsFilter corsFilter() {
+    public FilterRegistrationBean<CorsFilter> corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         // 允许cookies跨域
@@ -29,6 +25,9 @@ public class CorsConfig {
         // 允许提交请求的方法，*表示全部允许
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
+        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
+        // 这个顺序很重要哦，为避免麻烦请设置在最前
+        bean.setOrder(0);
+        return bean;
     }
 }
