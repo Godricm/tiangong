@@ -13,6 +13,7 @@ public enum CoreErrorCode {
     SYSTEM_AUTH_ERROR(99994, "无权限进行该操作"),
     SENTINEL_ERROR(99993, "服务器繁忙,请稍后再试"),
 
+    WX_EXISTS_ERROR(89999, "重复记录"),
     // 各业务服务使用从2xxxx - 8xxxx的状态码
     ;
 
