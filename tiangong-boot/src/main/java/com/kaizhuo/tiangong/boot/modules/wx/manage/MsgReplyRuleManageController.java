@@ -1,18 +1,9 @@
 package com.kaizhuo.tiangong.boot.modules.wx.manage;
 
-import com.kaizhuo.tiangong.boot.framework.constants.CoreErrorCode;
-import com.kaizhuo.tiangong.boot.framework.vo.ResponseVo;
-import com.kaizhuo.tiangong.boot.modules.wx.dto.RegexConstant;
+import com.kaizhuo.tiangong.boot.framework.controller.BaseController;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.MsgReplyRule;
 import com.kaizhuo.tiangong.boot.modules.wx.service.MsgReplyRuleService;
-import me.chanjar.weixin.common.api.WxConsts;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
-import java.util.Map;
-import java.util.regex.Pattern;
 
 
 /**
@@ -24,68 +15,7 @@ import java.util.regex.Pattern;
  */
 @RestController
 @RequestMapping("/wx/msgReplyRule")
-public class MsgReplyRuleManageController {
-    @Autowired
-    private MsgReplyRuleService msgReplyRuleService;
+public class MsgReplyRuleManageController extends BaseController<MsgReplyRuleService,MsgReplyRule> {
 
-    /**
-     * 列表
-     */
-//    @GetMapping("/list")
-//    @RequiresPermissions("wx:msgreplyrule:list")
-//    public R list(@RequestParam Map<String, Object> params) {
-//        PageUtils page = msgReplyRuleService.queryPage(params);
-//
-//        return R.ok().put("page", page);
-//    }
-
-
-    /**
-     * 信息
-     */
-    @GetMapping("/info/{ruleId}")
-    @RequiresPermissions("wx:msgreplyrule:info")
-    public ResponseVo info(@PathVariable("ruleId") Integer ruleId) {
-        MsgReplyRule msgReplyRule = msgReplyRuleService.getById(ruleId);
-
-        return new ResponseVo(msgReplyRule);
-    }
-
-    /**
-     * 保存
-     */
-    @PostMapping("/save")
-    @RequiresPermissions("wx:msgreplyrule:save")
-    public ResponseVo save(@RequestBody MsgReplyRule msgReplyRule) {
-        if (WxConsts.KefuMsgType.NEWS.equals(msgReplyRule.getReplyType()) &&
-            !Pattern.matches(RegexConstant.NUMBER_ARRAY, msgReplyRule.getReplyContent())) {
-            return  new ResponseVo(CoreErrorCode.PARAM_ERROR.getCode(),"图文消息ID格式不正确");
-        }
-        msgReplyRuleService.save(msgReplyRule);
-
-        return ResponseVo.ok();
-    }
-
-    /**
-     * 修改
-     */
-    @PostMapping("/update")
-    @RequiresPermissions("wx:msgreplyrule:update")
-    public ResponseVo update(@RequestBody MsgReplyRule msgReplyRule) {
-        msgReplyRuleService.updateById(msgReplyRule);
-
-        return ResponseVo.ok();
-    }
-
-    /**
-     * 删除
-     */
-    @PostMapping("/delete")
-    @RequiresPermissions("wx:msgreplyrule:delete")
-    public ResponseVo delete(@RequestBody Integer[] ruleIds) {
-        msgReplyRuleService.removeByIds(Arrays.asList(ruleIds));
-
-        return ResponseVo.ok();
-    }
 
 }

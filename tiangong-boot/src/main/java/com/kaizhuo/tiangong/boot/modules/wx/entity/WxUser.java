@@ -7,6 +7,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.kaizhuo.tiangong.boot.framework.controller.BaseModel;
 import lombok.Data;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.springframework.util.StringUtils;
@@ -20,7 +21,7 @@ import java.util.Date;
  */
 @Data
 @TableName("wx_user")
-public class WxUser implements Serializable {
+public class WxUser extends BaseModel<WxUser> {
 
     private static final long serialVersionUID = 1L;
     @TableId(type = IdType.INPUT)

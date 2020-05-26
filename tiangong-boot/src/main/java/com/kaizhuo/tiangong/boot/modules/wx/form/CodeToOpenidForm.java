@@ -16,7 +16,7 @@ import javax.validation.constraints.NotEmpty;
  * @modified: miaochen
  **/
 @Data
-public class CodeToOpenIdForm {
+public class CodeToOpenidForm {
     @NotEmpty(message = "code不得为空")
     private String code;
 

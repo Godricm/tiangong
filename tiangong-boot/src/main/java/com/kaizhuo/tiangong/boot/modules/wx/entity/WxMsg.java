@@ -3,6 +3,7 @@ package com.kaizhuo.tiangong.boot.modules.wx.entity;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.kaizhuo.tiangong.boot.framework.controller.BaseModel;
 import lombok.Data;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
@@ -18,7 +19,7 @@ import java.util.Date;
  */
 @Data
 @TableName("wx_msg")
-public class WxMsg implements Serializable {
+public class WxMsg extends BaseModel<WxMsg> {
 	private static final long serialVersionUID = 1L;
 
 	/**

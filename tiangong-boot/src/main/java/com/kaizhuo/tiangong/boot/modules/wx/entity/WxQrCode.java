@@ -2,6 +2,7 @@ package com.kaizhuo.tiangong.boot.modules.wx.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.kaizhuo.tiangong.boot.framework.controller.BaseModel;
 import com.kaizhuo.tiangong.boot.modules.wx.form.WxQrCodeForm;
 import lombok.Data;
 
@@ -17,7 +18,7 @@ import java.util.Date;
  */
 @Data
 @TableName("wx_qr_code")
-public class WxQrCode implements Serializable {
+public class WxQrCode extends BaseModel<WxQrCode> {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -14,6 +14,7 @@ public enum CoreErrorCode {
     SENTINEL_ERROR(99993, "服务器繁忙,请稍后再试"),
 
     WX_EXISTS_ERROR(89999, "重复记录"),
+    WX_AUTH_ERROR(89998,"code换取openid失败"),
     // 各业务服务使用从2xxxx - 8xxxx的状态码
     ;
 

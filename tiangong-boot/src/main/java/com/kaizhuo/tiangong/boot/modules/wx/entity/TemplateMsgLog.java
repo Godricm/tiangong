@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.kaizhuo.tiangong.boot.framework.controller.BaseModel;
 import lombok.Data;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 
@@ -18,7 +19,7 @@ import java.util.Date;
  */
 @Data
 @TableName("template_msg_log")
-public class TemplateMsgLog implements Serializable {
+public class TemplateMsgLog extends BaseModel<TemplateMsgLog> {
 
     private static final long serialVersionUID = 1L;
     @TableId(type = IdType.AUTO)
