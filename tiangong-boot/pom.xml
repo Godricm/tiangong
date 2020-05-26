@@ -204,6 +204,18 @@
             <artifactId>quartz-jobs</artifactId>
             <version>${quartz.version}</version>
         </dependency>
+
+        <!--微信-->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-mp</artifactId>
+            <version>${weixin-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-pay</artifactId>
+            <version>${weixin-java.version}</version>
+        </dependency>
     </dependencies>
 
     <profiles>

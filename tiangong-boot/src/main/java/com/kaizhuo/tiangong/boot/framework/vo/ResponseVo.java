@@ -39,6 +39,10 @@ public class ResponseVo<T> {
         return new ResponseVo<>(CoreErrorCode.SYSTEM_ERROR.getCode(), CoreErrorCode.SYSTEM_ERROR.getDesc());
     }
 
+    public static ResponseVo error(String message){
+        return new ResponseVo<>(CoreErrorCode.SYSTEM_ERROR.getCode(), message);
+    }
+
     public int getStatus() {
         return this.status;
     }
