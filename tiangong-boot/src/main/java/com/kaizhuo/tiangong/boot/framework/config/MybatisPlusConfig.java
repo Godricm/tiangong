@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.kaizhuo.tiangong.boot.support.*.mapper")
+@MapperScan("com.kaizhuo.tiangong.boot.modules.*.mapper")
 public class MybatisPlusConfig {
     /**
      * 分页插件

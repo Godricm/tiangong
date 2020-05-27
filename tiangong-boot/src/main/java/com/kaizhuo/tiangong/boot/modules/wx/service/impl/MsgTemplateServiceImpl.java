@@ -3,7 +3,7 @@ package com.kaizhuo.tiangong.boot.modules.wx.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.kaizhuo.tiangong.boot.framework.controller.BaseServiceImpl;
 import com.kaizhuo.tiangong.boot.framework.validator.Assert;
-import com.kaizhuo.tiangong.boot.modules.wx.dao.MsgTemplateMapper;
+import com.kaizhuo.tiangong.boot.modules.wx.mapper.MsgTemplateMapper;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.MsgTemplate;
 import com.kaizhuo.tiangong.boot.modules.wx.service.MsgTemplateService;
 import me.chanjar.weixin.common.error.WxErrorException;

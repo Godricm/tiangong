@@ -18,7 +18,7 @@ import java.util.Date;
  * @date 2017-9-27
  */
 @Data
-@TableName("template_msg_log")
+@TableName("wx_template_msg_log")
 public class TemplateMsgLog extends BaseModel<TemplateMsgLog> {
 
     private static final long serialVersionUID = 1L;

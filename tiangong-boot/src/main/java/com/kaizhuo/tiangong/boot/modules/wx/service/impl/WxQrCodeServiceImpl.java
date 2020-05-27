@@ -1,9 +1,7 @@
 package com.kaizhuo.tiangong.boot.modules.wx.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.kaizhuo.tiangong.boot.modules.wx.dao.WxQrCodeMapper;
+import com.kaizhuo.tiangong.boot.modules.wx.mapper.WxQrCodeMapper;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.WxQrCode;
 import com.kaizhuo.tiangong.boot.modules.wx.form.WxQrCodeForm;
 import com.kaizhuo.tiangong.boot.modules.wx.service.WxQrCodeService;
@@ -12,10 +10,8 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.result.WxMpQrCodeTicket;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.Date;
-import java.util.Map;
 
 
 @Service

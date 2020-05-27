@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kaizhuo.tiangong.boot.common.util.Query;
 import com.kaizhuo.tiangong.boot.framework.config.TaskExcutor;
-import com.kaizhuo.tiangong.boot.modules.wx.dao.WxUserMapper;
+import com.kaizhuo.tiangong.boot.modules.wx.mapper.WxUserMapper;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.WxUser;
 import com.kaizhuo.tiangong.boot.modules.wx.service.WxUserService;
 import me.chanjar.weixin.common.error.WxErrorException;

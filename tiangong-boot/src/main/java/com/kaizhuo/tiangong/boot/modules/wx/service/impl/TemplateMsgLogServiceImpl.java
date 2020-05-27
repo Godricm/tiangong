@@ -1,10 +1,7 @@
 package com.kaizhuo.tiangong.boot.modules.wx.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kaizhuo.tiangong.boot.framework.controller.BaseServiceImpl;
-import com.kaizhuo.tiangong.boot.modules.wx.dao.TemplateMsgLogMapper;
+import com.kaizhuo.tiangong.boot.modules.wx.mapper.TemplateMsgLogMapper;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.TemplateMsgLog;
 import com.kaizhuo.tiangong.boot.modules.wx.service.TemplateMsgLogService;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -12,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Service

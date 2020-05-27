@@ -8,10 +8,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2018/1/30.
+ *
+ * @author Administrator
+ * @date 2018/1/30
  */
 @JsonIgnoreProperties(value={"ct","ut","isDel","version"})
-public abstract class BaseModel<T extends BaseModel> extends Model<T> {
+public abstract class BaseModel<T extends BaseModel<?>> extends Model<T> {
 
     @Override
     public String toString() {

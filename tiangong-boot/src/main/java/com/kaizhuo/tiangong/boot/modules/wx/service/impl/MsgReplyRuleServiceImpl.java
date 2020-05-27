@@ -1,7 +1,7 @@
 package com.kaizhuo.tiangong.boot.modules.wx.service.impl;
 
 import com.kaizhuo.tiangong.boot.framework.controller.BaseServiceImpl;
-import com.kaizhuo.tiangong.boot.modules.wx.dao.MsgReplyRuleMapper;
+import com.kaizhuo.tiangong.boot.modules.wx.mapper.MsgReplyRuleMapper;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.MsgReplyRule;
 import com.kaizhuo.tiangong.boot.modules.wx.service.MsgReplyRuleService;
 import org.springframework.beans.factory.annotation.Autowired;

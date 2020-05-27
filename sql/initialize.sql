@@ -21,7 +21,7 @@ INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `
 VALUES ('日志管理', 'G', 'log_manager', '/log', '/log/operationlog', 'PageView', 'book', NULL, 1, '1');
 -- 常用功能
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
-VALUES ('常用功能', 'G', 'sys_common', '/common', '/common/article', 'PageView', 'inbox', NULL, 1, '1');
+VALUES ('常用功能', 'G', 'sys_common', '/common', '/common/wxArticle', 'PageView', 'inbox', NULL, 1, '1');
 
 -- 用户相关
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
@@ -172,16 +172,16 @@ VALUES ('定时任务日志查询', 'O', 'get', NULL, NULL, NULL, NULL, 'tasklog
 
 -- 文章管理
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
-VALUES ('文章信息', 'M', 'article', '/article', NULL, 'article/ArticleView', NULL, 'article:view', 2, 9);
+VALUES ('文章信息', 'M', 'wxArticle', '/wxArticle', NULL, 'wxArticle/ArticleView', NULL, 'wxArticle:view', 2, 9);
 SELECT @parentId := LAST_INSERT_ID();
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
-VALUES ('文章信息新增', 'O', 'add', NULL, NULL, NULL, NULL, 'article:add', 3, @parentId);
+VALUES ('文章信息新增', 'O', 'add', NULL, NULL, NULL, NULL, 'wxArticle:add', 3, @parentId);
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
-VALUES ('文章信息删除', 'O', 'del', NULL, NULL, NULL, NULL, 'article:del', 3, @parentId);
+VALUES ('文章信息删除', 'O', 'del', NULL, NULL, NULL, NULL, 'wxArticle:del', 3, @parentId);
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
-VALUES ('文章信息修改', 'O', 'edit', NULL, NULL, NULL, NULL, 'article:edit', 3, @parentId);
+VALUES ('文章信息修改', 'O', 'edit', NULL, NULL, NULL, NULL, 'wxArticle:edit', 3, @parentId);
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
-VALUES ('文章信息查询', 'O', 'get', NULL, NULL, NULL, NULL, 'article:get', 3, @parentId);
+VALUES ('文章信息查询', 'O', 'get', NULL, NULL, NULL, NULL, 'wxArticle:get', 3, @parentId);
 -- 文章分类管理
 INSERT INTO `core_resource` (`resource_name`, `resource_type`, `resource_key`, `resource_uri`, `resource_redirect`, `resource_view`, `resource_icon`, `resource_perms`, `resource_level`, `parent_resource_id`)
 VALUES ('文章分类', 'M', 'articlecategory', '/articlecategory', NULL, 'articlecategory/ArticleCategoryView', NULL, 'articlecategory:view', 2, 9);

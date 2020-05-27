@@ -19,7 +19,7 @@ import java.util.Date;
  * @date 2017-9-27
  */
 @Data
-@TableName("msg_template")
+@TableName("wx_msg_template")
 public class MsgTemplate extends BaseModel<MsgTemplate> {
     private static final long serialVersionUID = 1L;
     @TableId(type = IdType.AUTO)

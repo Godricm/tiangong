@@ -18,7 +18,7 @@ import java.util.Date;
  * @date 2017-11-1
  */
 @Data
-@TableName("msg_reply_rule")
+@TableName("wx_msg_reply_rule")
 public class MsgReplyRule extends BaseModel<MsgReplyRule> {
     private static final long serialVersionUID = 1L;
     @TableId(type = IdType.AUTO)

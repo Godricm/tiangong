@@ -2,6 +2,7 @@ server:
   port: $[server.port]
   tomcat:
       max-threads: 10
+  baseAddress: http://localhost:$[server.port]
 
 spring:
   servlet:
@@ -77,3 +78,22 @@ app:
     timeout: 86400000
     token:
       rediskey: user_%s_token_%s
+
+## 微信公众号配置
+wx:
+  mp:
+    # 自动回复消息发送间隔（毫秒），适当增加间隔可提升用户体验
+    autoReplyInterval: 1000
+    configs:
+      -   appid:
+          secret:
+          token: my_weixin_token_
+          aesKey:
+  pay:
+    appId:  #微信公众号或者小程序等的appid
+    mchId:  #微信支付商户号
+    mchKey:  #微信支付商户密钥
+    subAppId: #服务商模式下的子商户公众账号ID
+    subMchId: #服务商模式下的子商户号
+    keyPath: classpath:/cert/wx-pay-cert.p12 # p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）
+    useSandBoxEnv: true #是否使用微信支付沙箱测试环境

@@ -3,13 +3,11 @@ package com.kaizhuo.tiangong.boot.modules.wx.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.kaizhuo.tiangong.boot.framework.config.TaskExcutor;
-import com.kaizhuo.tiangong.boot.framework.controller.BaseServiceImpl;
 import com.kaizhuo.tiangong.boot.framework.validator.Assert;
-import com.kaizhuo.tiangong.boot.modules.wx.dao.MsgReplyRuleMapper;
-import com.kaizhuo.tiangong.boot.modules.wx.entity.Article;
+import com.kaizhuo.tiangong.boot.modules.wx.entity.WxArticle;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.MsgReplyRule;
 import com.kaizhuo.tiangong.boot.modules.wx.entity.WxMsg;
-import com.kaizhuo.tiangong.boot.modules.wx.service.ArticleService;
+import com.kaizhuo.tiangong.boot.modules.wx.service.WxArticleService;
 import com.kaizhuo.tiangong.boot.modules.wx.service.MsgReplyRuleService;
 import com.kaizhuo.tiangong.boot.modules.wx.service.MsgReplyService;
 import com.kaizhuo.tiangong.boot.modules.wx.service.WxMsgService;
@@ -48,7 +46,7 @@ public class MsgReplyServiceImpl  implements MsgReplyService {
     WxMpService wxService;
 
     @Autowired
-    ArticleService articleService;
+    WxArticleService wxArticleService;
 
     @Value("${wx.mp.autoReplyInterval:1000}")
     Long autoReplyInterval;
@@ -127,7 +125,7 @@ public class MsgReplyServiceImpl  implements MsgReplyService {
     public void replyNews(String toUser, String newsIds) throws WxErrorException {
         Assert.isBlank(newsIds,"文章ID不得为空");
         int articleId = Integer.parseInt(newsIds);
-        Article a = articleService.findById(articleId);
+        WxArticle a = wxArticleService.findById(articleId);
         WxMpKefuMessage.WxArticle wxArticle = new WxMpKefuMessage.WxArticle(a.getTitle(),a.getSummary(),a.getTargetLink(),a.getImage());
         List<WxMpKefuMessage.WxArticle> newsList = new ArrayList<WxMpKefuMessage.WxArticle>(){{add(wxArticle);}};
         wxService.getKefuService().sendKefuMessage(WxMpKefuMessage.NEWS().toUser(toUser).articles(newsList).build());
