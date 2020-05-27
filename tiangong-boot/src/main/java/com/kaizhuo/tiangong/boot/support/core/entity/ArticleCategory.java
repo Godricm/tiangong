@@ -22,7 +22,7 @@ public class ArticleCategory extends BaseModel<ArticleCategory> {
     private String articleCategoryName;
 
     @ApiModelProperty(value = "父级分类ID")
-    @TableField(strategy = FieldStrategy.IGNORED)
+    @TableField(insertStrategy = FieldStrategy.IGNORED)
     private Long parentCategoryId;
 
     @ApiModelProperty(value = "分类等级 0 顶级 1 一级  暂时只支持到一级")

@@ -17,7 +17,7 @@ public class Dept extends BaseModel<Dept> {
     @TableId(value = "dept_id", type = IdType.AUTO)
     private Long deptId;
 
-    @TableField(strategy = FieldStrategy.IGNORED)
+    @TableField(insertStrategy = FieldStrategy.IGNORED)
     @ApiModelProperty(value = "父部门id")
     private Long parentId;
 

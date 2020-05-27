@@ -486,3 +486,4 @@ create table core_user_role_mapping
 );
 
 alter table core_user_role_mapping comment '用户角色映射';
+

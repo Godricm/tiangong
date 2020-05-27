@@ -45,7 +45,7 @@ public class Resource extends BaseModel<Resource> {
     private Integer resourceLevel;
 
     @ApiModelProperty(value = "父级资源ID")
-    @TableField(strategy = FieldStrategy.IGNORED)
+    @TableField(insertStrategy = FieldStrategy.IGNORED)
     private Long parentResourceId;
 
     @ApiModelProperty(value = "排序")

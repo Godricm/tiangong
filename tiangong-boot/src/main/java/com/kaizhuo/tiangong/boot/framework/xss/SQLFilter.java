@@ -5,7 +5,8 @@
 
 package com.kaizhuo.tiangong.boot.framework.xss;
 
-import com.github.niefy.common.exception.RRException;
+import com.kaizhuo.tiangong.boot.framework.constants.CoreErrorCode;
+import com.kaizhuo.tiangong.boot.framework.exception.BaseException;
 import org.apache.commons.lang.StringUtils;
 
 /**
@@ -37,7 +38,7 @@ public class SQLFilter {
         //判断是否包含非法字符
         for (String keyword : keywords) {
             if (str.indexOf(keyword) != -1) {
-                throw new RRException("包含非法字符");
+                throw new BaseException("包含非法字符",CoreErrorCode.SYSTEM_ERROR.getCode());
             }
         }
 
