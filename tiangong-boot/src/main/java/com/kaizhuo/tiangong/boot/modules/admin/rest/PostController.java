@@ -16,7 +16,7 @@ import java.util.List;
 
  
 @RestController
-@RequestMapping("/v1/post")
+@RequestMapping(Urls.ROOT+"/post")
 @Api(value = "岗位信息相关", tags = "岗位信息相关")
 public class PostController extends BaseController<IPostService, Post> {
 

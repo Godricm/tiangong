@@ -23,7 +23,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/v1/systemNotice")
+@RequestMapping(com.kaizhuo.tiangong.boot.modules.admin.constants.Urls.ROOT+"/systemNotice")
 @Api(value = "系统公告相关", tags = "系统公告相关")
 public class SystemNoticeController {
 

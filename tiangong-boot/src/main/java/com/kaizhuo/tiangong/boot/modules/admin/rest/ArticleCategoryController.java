@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/v1/articleCategory")
+@RequestMapping(Urls.ROOT+"/articleCategory")
 @Api(value = "文章分类相关", tags = "文章分类相关")
 public class ArticleCategoryController extends BaseController<IArticleCategoryService, ArticleCategory> {
 

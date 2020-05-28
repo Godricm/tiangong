@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/userGroup")
+@RequestMapping(Urls.ROOT+"/userGroup")
 @Api(value = "用户组相关", tags = "用户组相关")
 public class UserGroupController extends BaseController<IUserGroupService, UserGroup> {
 

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/v1/taskLog")
+@RequestMapping(Urls.ROOT+"/taskLog")
 @Api(value = "定时任务日志相关", tags = "定时任务日志相关")
 public class TaskLogController extends BaseController<ITaskLogService, TaskLog> {
     @RequestMapping(value = Urls.TASK_LOG_RANGE_LIST, method = RequestMethod.GET)

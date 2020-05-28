@@ -20,7 +20,7 @@ import springfox.documentation.annotations.ApiIgnore;
 import java.util.List;
 
 @RestController
-@RequestMapping("/gen")
+@RequestMapping("/v1/gen")
 @ApiIgnore
 @Api(value = "代码生成器", tags = "代码生成器")
 public class GenController {
