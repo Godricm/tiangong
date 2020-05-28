@@ -8,12 +8,12 @@ gen:
   sqlPath: /Users/miaochen/Documents/tiangong/sql/
 
   dbUser: root
-  dbPwd: 123456
+  dbPwd: root
   dbUrl: jdbc:mysql://localhost:3306/tiangong?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
 
   packageName: com.kaizhuo.tiangong.boot.support
   packagePath: com/kaizhuo/tiangong/boot/support
-  commonPackageName: com.kaizhuo.tiangong.framework
+  commonPackageName: com.kaizhuo.tiangong.boot.framework.controller
   moduleName: core
 
   tablePrefix: core_

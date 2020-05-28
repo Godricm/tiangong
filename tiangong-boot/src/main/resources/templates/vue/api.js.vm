@@ -1,17 +1,17 @@
-import { axios } from '@/utils/request'
+import  request from '@/utils/request'
 
-const moudulePath = '/v1/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end'
+const modulePath = '/v1/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end'
 
 const api = {
-  ${entity.toLowerCase()}List: moudulePath + '/page',
-  ${entity.toLowerCase()}All: moudulePath + '/all',
-  add${entity}: moudulePath
+  ${entity.toLowerCase()}List: modulePath + '/page',
+  ${entity.toLowerCase()}All: modulePath + '/all',
+  add${entity}: modulePath
 }
 
 export default api
 
 export function get${entity}List (parameter) {
-  return axios({
+  return request({
     url: api.${entity.toLowerCase()}List,
     method: 'get',
     params: parameter
@@ -19,7 +19,7 @@ export function get${entity}List (parameter) {
 }
 
 export function get${entity}All (parameter) {
-  return axios({
+  return request({
     url: api.${entity.toLowerCase()}All,
     method: 'get',
     params: parameter
@@ -27,14 +27,14 @@ export function get${entity}All (parameter) {
 }
 
 export function get${entity}Info (#foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end) {
-  return axios({
-    url: moudulePath + '/' + #foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end,
+  return request({
+    url: modulePath + '/' + #foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end,
     method: 'get'
   })
 }
 
 export function add${entity} (parameter) {
-  return axios({
+  return request({
     url: api.add${entity},
     method: 'post',
     params: parameter
@@ -43,8 +43,8 @@ export function add${entity} (parameter) {
 
 export function edit${entity} (parameter) {
   console.log('parameter', parameter)
-  return axios({
-    url: moudulePath,
+  return request({
+    url: modulePath,
     method: 'put',
     params: parameter
   })
@@ -52,8 +52,8 @@ export function edit${entity} (parameter) {
 
 export function del${entity} (#foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end) {
   console.log('#foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end', #foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end)
-  return axios({
-    url: moudulePath + '/' + #foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end,
+  return request({
+    url: modulePath + '/' + #foreach($field in ${table.fields})#if(${field.keyFlag})${field.propertyName}#end#end,
     method: 'delete'
   })
 }
