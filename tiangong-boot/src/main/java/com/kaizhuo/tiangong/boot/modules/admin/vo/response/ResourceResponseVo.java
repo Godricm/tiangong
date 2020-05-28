@@ -15,6 +15,17 @@ public class ResourceResponseVo {
     private String resourceUri;
     @ApiModelProperty(value = "资源重定向")
     private String resourceRedirect;
+    @ApiModelProperty(value = "资源目录")
+    private String resourceDirectory;
+
+    public String getResourceDirectory() {
+        return resourceDirectory;
+    }
+
+    public void setResourceDirectory(String resourceDirectory) {
+        this.resourceDirectory = resourceDirectory;
+    }
+
     @ApiModelProperty(value = "资源视图")
     private String resourceView;
     @ApiModelProperty(value = "资源标识符")

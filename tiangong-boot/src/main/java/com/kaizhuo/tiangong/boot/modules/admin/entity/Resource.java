@@ -32,6 +32,9 @@ public class Resource extends BaseModel<Resource> {
     @ApiModelProperty(value = "资源重定向")
     private String resourceRedirect;
 
+    @ApiModelProperty(value = "资源目录")
+    private String resourceDirectory;
+
     @ApiModelProperty(value = "资源视图")
     private String resourceView;
 
@@ -47,6 +50,14 @@ public class Resource extends BaseModel<Resource> {
     @ApiModelProperty(value = "父级资源ID")
     @TableField(insertStrategy = FieldStrategy.IGNORED)
     private Long parentResourceId;
+
+    public String getResourceDirectory() {
+        return resourceDirectory;
+    }
+
+    public void setResourceDirectory(String resourceDirectory) {
+        this.resourceDirectory = resourceDirectory;
+    }
 
     @ApiModelProperty(value = "排序")
     private Integer sort;

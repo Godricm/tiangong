@@ -10,6 +10,7 @@
         <result column="resource_key" property="resourceKey" />
         <result column="resource_uri" property="resourceUri" />
         <result column="resource_redirect" property="resourceRedirect" />
+        <result column="resource_directory" property="resourceDirectory"></result>
         <result column="resource_view" property="resourceView" />
         <result column="resource_icon" property="resourceIcon" />
         <result column="resource_perms" property="resourcePerms" />
@@ -24,7 +25,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        resource_id, resource_name, resource_type, resource_key, resource_uri, resource_redirect, resource_view, resource_icon, resource_perms, resource_level, parent_resource_id, sort, ct, ut, is_del, version
+        resource_id, resource_name, resource_type, resource_key, resource_uri, resource_redirect, resource_directory,resource_view, resource_icon, resource_perms, resource_level, parent_resource_id, sort, ct, ut, is_del, version
     </sql>
 
     <select id="getResources"
