@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kaizhuo.tiangong.boot.modules.wx.mapper.WxUserMapper">
-    <cache-ref namespace="com.kaizhuo.tiangong.boot.modules.wx.mapper.WxUserMapper"/>
+<mapper namespace="com.kaizhuo.tiangong.boot.modules.wechat.mapper.WxUserMapper">
+    <cache-ref namespace="com.kaizhuo.tiangong.boot.modules.wechat.mapper.WxUserMapper"/>
 
     <update id="unsubscribe">
         UPDATE wx_user SET subscribe=0 WHERE openid=#{openid}
