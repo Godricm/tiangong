@@ -24,6 +24,17 @@ public class UpdateResourceVo {
     private String resourceView;
     @ApiModelProperty(value = "资源图标")
     private String resourceIcon;
+    @ApiModelProperty(value = "权限标识")
+    private String resourcePerms;
+
+    public String getResourcePerms() {
+        return resourcePerms;
+    }
+
+    public void setResourcePerms(String resourcePerms) {
+        this.resourcePerms = resourcePerms;
+    }
+
     @ApiModelProperty(value = "父级资源ID")
     private Long parentResourceId;
     @ApiModelProperty(value = "排序")
