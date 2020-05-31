@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
  * @modified: miaochen
  **/
 @RestController
-@RequestMapping("/wxAuth")
+@RequestMapping("/v1/wx/wxAuth")
 @RequiredArgsConstructor
 @Slf4j
 public class WxAuthController {

@@ -25,7 +25,7 @@ import java.util.List;
  * @modified: miaochen
  **/
 @RestController
-@RequestMapping("/wxArticle")
+@RequestMapping("/v1/wx/Article")
 public class WxArticleController {
     @Autowired
     WxArticleService wxArticleService;

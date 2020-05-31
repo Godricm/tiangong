@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/wxUserTags")
+@RequestMapping("/v1/wx/wxUserTags")
 public class WxUserTagsController {
     @Autowired
     WxUserTagsService wxUserTagsService;

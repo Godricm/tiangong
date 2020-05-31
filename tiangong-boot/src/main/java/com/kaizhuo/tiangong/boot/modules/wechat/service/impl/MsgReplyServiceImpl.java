@@ -17,6 +17,7 @@ import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.kefu.WxMpKefuMessage;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -57,7 +58,7 @@ public class MsgReplyServiceImpl  implements MsgReplyService {
     public boolean tryAutoReply(boolean exactMatch, String toUser, String keywords) {
         try {
             List<MsgReplyRule> rules = msgReplyRuleService.getMatchedRules(exactMatch, keywords);
-            if (rules.isEmpty()) {
+            if (CollectionUtils.isEmpty(rules)) {
                 return false;
             }
             long delay = 0;

@@ -1,8 +1,15 @@
 server:
   port: $[server.port]
+  http:
+    port: $[server.port]
   tomcat:
-      max-threads: 10
-  baseAddress: http://localhost:$[server.port]
+    max-threads: 10
+  baseAddress: https://weixin.miaochen.wang
+  ssl:
+    key-store: classpath:tomcat.p12
+    key-store-password: woshi#0930
+    key-store-type: PKCS12
+    key-alias: tomcat
 
 spring:
   servlet:
@@ -21,7 +28,7 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   datasource:
-      # 使用阿里的Druid连接池
+    # 使用阿里的Druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 填写你数据库的url、登录名、密码和数据库名
@@ -85,10 +92,10 @@ wx:
     # 自动回复消息发送间隔（毫秒），适当增加间隔可提升用户体验
     autoReplyInterval: 1000
     configs:
-      -   appid:
-          secret:
-          token: my_weixin_token_
-          aesKey:
+      - appid: wx5deed3a14709dd32
+        secret: fc9e5f54deebfc27af47f115c8f42584
+        token: RY65b3C6Z3BU3Z85EergN5777c73328B
+        aesKey: zrxEpzt2X0tCkQXKqMZqMqmqqXLxREMXqYYYctmdKPl
   pay:
     appId:  #微信公众号或者小程序等的appid
     mchId:  #微信支付商户号
