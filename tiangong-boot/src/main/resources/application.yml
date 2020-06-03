@@ -5,11 +5,11 @@ server:
   tomcat:
     max-threads: 10
   baseAddress: https://weixin.miaochen.wang
-  ssl:
-    key-store: classpath:tomcat.p12
-    key-store-password: woshi#0930
-    key-store-type: PKCS12
-    key-alias: tomcat
+#  ssl:
+#    key-store: classpath:tomcat.p12
+#    key-store-password: woshi#0930
+#    key-store-type: PKCS12
+#    key-alias: tomcat
 
 spring:
   servlet:
