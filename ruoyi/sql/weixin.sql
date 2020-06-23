@@ -1,6 +1,8 @@
+ew
+SQL
 CREATE TABLE `ry-vue`.`account_wechat`
 (
-    `wechat_id`          BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键',
+    `wechat_id`          BIGINT(20)   NOT NULL COMMENT '主键',
     `name`               VARCHAR(32)  NOT NULL COMMENT '公众号名称',
     `account`            VARCHAR(32)  NOT NULL COMMENT '公众号账号',
     `original`           VARCHAR(64)  NOT NULL COMMENT '原始ID',
@@ -19,5 +21,6 @@ CREATE TABLE `ry-vue`.`account_wechat`
     `create_time`        DATETIME     NOT NULL COMMENT '创建时间',
     `update_by`          VARCHAR(64)  NOT NULL COMMENT '更新者',
     `update_time`        DATETIME     NOT NULL COMMENT '更新时间',
-    PRIMARY KEY (`wechat_id`)
+    PRIMARY KEY (`wechat_id`(20)),
+    UNIQUE (`app_key`)
 ) ENGINE = InnoDB COMMENT = '微信公众号表';
