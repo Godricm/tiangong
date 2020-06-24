@@ -6,12 +6,12 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 微信公众号对象 account_wechat
+ * 微信公众号对象 wechat_account
  * 
- * @author ruoyi
- * @date 2020-06-21
+ * @author godrci
+ * @date 2020-06-24
  */
-public class AccountWechat extends BaseEntity
+public class WechatAccount extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
@@ -23,7 +23,6 @@ public class AccountWechat extends BaseEntity
     private String name;
 
     /** 公众号账号 */
-    @Excel(name = "公众号账号")
     private String account;
 
     /** 原始ID */
@@ -31,43 +30,35 @@ public class AccountWechat extends BaseEntity
     private String original;
 
     /** appid */
-    @Excel(name = "appid")
     private String appKey;
 
     /** appsecret */
-    @Excel(name = "appsecret")
     private String appSecret;
 
     /** 接入的token值 */
-    @Excel(name = "接入的token值")
     private String token;
 
     /** 接入的EncodingAESKey值 */
-    @Excel(name = "接入的EncodingAESKey值")
     private String encodingaeskey;
 
-    /** 1、普通订阅号2、认证订阅号3、普通服务号4、认证服务号/认证媒体/政府订阅号 */
-    @Excel(name = "1、普通订阅号2、认证订阅号3、普通服务号4、认证服务号/认证媒体/政府订阅号")
+    /** 类型 */
+    @Excel(name = "类型")
     private Integer level;
 
     /** 国家 */
-    @Excel(name = "国家")
     private String country;
 
     /** 省份 */
-    @Excel(name = "省份")
     private String province;
 
     /** 城市 */
-    @Excel(name = "城市")
     private String city;
 
     /** 开放平台返回的auth_refresh_token */
-    @Excel(name = "开放平台返回的auth_refresh_token")
     private String authRefreshToken;
 
-    /** 状态（0正常，1停用） */
-    @Excel(name = "状态", readConverterExp = "0=正常，1停用")
+    /** 状态 */
+    @Excel(name = "状态")
     private String status;
 
     /** 删除标志（0代表存在，1代表删除） */

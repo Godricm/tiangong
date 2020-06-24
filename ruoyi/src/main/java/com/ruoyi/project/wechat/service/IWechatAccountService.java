@@ -1,15 +1,15 @@
 package com.ruoyi.project.wechat.service;
 
 import java.util.List;
-import com.ruoyi.project.wechat.domain.AccountWechat;
+import com.ruoyi.project.wechat.domain.WechatAccount;
 
 /**
  * 微信公众号Service接口
  * 
- * @author ruoyi
- * @date 2020-06-21
+ * @author godrci
+ * @date 2020-06-24
  */
-public interface IAccountWechatService 
+public interface IWechatAccountService 
 {
     /**
      * 查询微信公众号
@@ -17,31 +17,31 @@ public interface IAccountWechatService
      * @param wechatId 微信公众号ID
      * @return 微信公众号
      */
-    public AccountWechat selectAccountWechatById(Long wechatId);
+    public WechatAccount selectWechatAccountById(Long wechatId);
 
     /**
      * 查询微信公众号列表
      * 
-     * @param accountWechat 微信公众号
+     * @param wechatAccount 微信公众号
      * @return 微信公众号集合
      */
-    public List<AccountWechat> selectAccountWechatList(AccountWechat accountWechat);
+    public List<WechatAccount> selectWechatAccountList(WechatAccount wechatAccount);
 
     /**
      * 新增微信公众号
      * 
-     * @param accountWechat 微信公众号
+     * @param wechatAccount 微信公众号
      * @return 结果
      */
-    public int insertAccountWechat(AccountWechat accountWechat);
+    public int insertWechatAccount(WechatAccount wechatAccount);
 
     /**
      * 修改微信公众号
      * 
-     * @param accountWechat 微信公众号
+     * @param wechatAccount 微信公众号
      * @return 结果
      */
-    public int updateAccountWechat(AccountWechat accountWechat);
+    public int updateWechatAccount(WechatAccount wechatAccount);
 
     /**
      * 批量删除微信公众号
@@ -49,7 +49,7 @@ public interface IAccountWechatService
      * @param wechatIds 需要删除的微信公众号ID
      * @return 结果
      */
-    public int deleteAccountWechatByIds(Long[] wechatIds);
+    public int deleteWechatAccountByIds(Long[] wechatIds);
 
     /**
      * 删除微信公众号信息
@@ -57,5 +57,5 @@ public interface IAccountWechatService
      * @param wechatId 微信公众号ID
      * @return 结果
      */
-    public int deleteAccountWechatById(Long wechatId);
+    public int deleteWechatAccountById(Long wechatId);
 }
